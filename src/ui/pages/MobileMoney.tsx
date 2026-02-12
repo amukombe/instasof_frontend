@@ -46,10 +46,10 @@ export function MobileMoney() {
         amount: numericAmount,
       });
 
-      setMessage( isWithdraw? "Withdraw request submitted. Please approve on your phone.": "Deposit request submitted. Please approve on your phone.");
+      setMessage( isWithdraw? "WithdrawwSuccessfull.": "Deposit request submitted. Please approve on your phone.");
 
       setReference(res.reference);
-      setStatus(res.statusDesc || "PENDING");
+      setStatus(res.statusDesc || "SUCCESS");
 
       setPhone("");
       setAmount("");
@@ -97,11 +97,11 @@ export function MobileMoney() {
         {(message || reference || status) && (
           <div className="footer-note" style={{ marginTop: 12 }}>
             {message && <div style={{ marginBottom: 6 }}>{message}</div>}
-            {reference && (
+            {/* {reference && (
               <div>
                 <strong>Reference:</strong> {reference}
               </div>
-            )}
+            )} */}
             {status && (
               <div>
                 <strong>Status:</strong> {status}

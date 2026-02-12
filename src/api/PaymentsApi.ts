@@ -40,6 +40,7 @@ export async function depositToWallet(
 export async function withdrawFromWallet(
   payload: MomoDto
 ):Promise<PayMobileMoneyResponse> {
+    const token = localStorage.getItem("wallet_token");
   const res = await fetch(`${API_BASE}/api/Payments/Deposit`, {method: "POST", headers: {"Content-Type": "application/json", Authorization: `Bearer ${token}`, },body: JSON.stringify(payload),
   });
 
